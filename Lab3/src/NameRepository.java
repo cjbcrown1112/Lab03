@@ -2,10 +2,12 @@ public class NameRepository {
     public String names[] = {"CJ" , "Regina" , "Diloy" , "Corona" };
 
     public Iterator getIterator() {
+
         return new NameIterator();
     }
 
     public void sendMessage(String message) {
+
         InternalEmail.showMessage(this, message);
     }
 
