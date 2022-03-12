@@ -1,11 +1,15 @@
-import java.util.Date;
+
+import java.util.logging.Logger;
+import java.util.logging.Level;
+
 
 public class InternalEmail {
-    public static void showMessage(NameRepository nameRepository, String message) {
+    final private static Logger logger = Logger.getLogger(InternalEmail.class.getName());
+    public  static void showMessage(NameRepository nameRepository, String message) {
 
         for (Iterator iter = nameRepository.getIterator(); iter.hasNext(); ) {
             String name = (String) iter.next();
-            System.out.println(new Date().toString() + " System Generated Email : Good Day " + name + "! " + message);
+            logger.log(Level.INFO, " System Generated Email : Good Day " + name + "! " + message);
         }
     }
 }
